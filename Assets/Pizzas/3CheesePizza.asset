@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd1f668ca6ce344aa4364be95ecfe63, type: 3}
+  m_Name: 3CheesePizza
+  m_EditorClassIdentifier: 
+  pizzaName: Cheese Pizza
+  isLocked: 1
+  unlockFee: 100
+  timeSeconds: 7
+  ingrediens:
+    Dough: 15
+    Souce: 15
+    Cheese: 15
+    Sausage: 0
+    Pepper: 0
+    Mushroom: 0
+    Chicken: 0
+    Pineapple: 0
+  spritePizza: {fileID: 21300000, guid: 0ff24031d2b9c7443a10f9d72536c235, type: 3}
+  spriteSlice: {fileID: 21300000, guid: 6957d295856b8754f8ad027b8be8b473, type: 3}
+  SliceIncome: 16.6
+  SliceAmount: 6

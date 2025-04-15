@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd1f668ca6ce344aa4364be95ecfe63, type: 3}
+  m_Name: 2TomatosoucePizza
+  m_EditorClassIdentifier: 
+  pizzaName: Tomato Souce Pizza
+  isLocked: 1
+  unlockFee: 0
+  timeSeconds: 5
+  ingrediens:
+    Dough: 10
+    Souce: 10
+    Cheese: 0
+    Sausage: 0
+    Pepper: 0
+    Mushroom: 0
+    Chicken: 0
+    Pineapple: 0
+  spritePizza: {fileID: 21300000, guid: c022be46dac894142824988ffd7d2f26, type: 3}
+  spriteSlice: {fileID: 21300000, guid: a9fb28811392d0a459d8f0b9941d4ce2, type: 3}
+  SliceIncome: 5.8
+  SliceAmount: 6

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4d682ca2f385b42aad1001260194f9, type: 3}
+  m_Name: PizzaProbability
+  m_EditorClassIdentifier: 
+  probabilities:
+  - Name: 7
+    probabilities:
+    - pizzaTypes: {fileID: 11400000, guid: c4c96c10aec48874e876c82b0c5c4beb, type: 2}
+      dropChance: 100
+  - Name: 20
+    probabilities:
+    - pizzaTypes: {fileID: 11400000, guid: c4c96c10aec48874e876c82b0c5c4beb, type: 2}
+      dropChance: 50
+    - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
+      dropChance: 50
+  - Name: 35
+    probabilities:
+    - pizzaTypes: {fileID: 11400000, guid: c4c96c10aec48874e876c82b0c5c4beb, type: 2}
+      dropChance: 30
+    - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
+      dropChance: 65
+    - pizzaTypes: {fileID: 11400000, guid: 8840e53cbf79e9641b643813da8ae63a, type: 2}
+      dropChance: 5
+  - Name: 50
+    probabilities:
+    - pizzaTypes: {fileID: 11400000, guid: c4c96c10aec48874e876c82b0c5c4beb, type: 2}
+      dropChance: 5
+    - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
+      dropChance: 75
+    - pizzaTypes: {fileID: 11400000, guid: 8840e53cbf79e9641b643813da8ae63a, type: 2}
+      dropChance: 20
+  - Name: 65
+    probabilities:
+    - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
+      dropChance: 40
+    - pizzaTypes: {fileID: 11400000, guid: 8840e53cbf79e9641b643813da8ae63a, type: 2}
+      dropChance: 40
+    - pizzaTypes: {fileID: 11400000, guid: 1cb0bc88c153caa44974dc13b260a9b4, type: 2}
+      dropChance: 20
