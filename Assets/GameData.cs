@@ -293,5 +293,10 @@ public class GameData : MonoBehaviour
             if(amount == 0) { return; }
         }
     }
+
+    public void AddIngredients(PizzaIngredients ings)
+    {
+        myIngredients += ings;
+    }
 }
 

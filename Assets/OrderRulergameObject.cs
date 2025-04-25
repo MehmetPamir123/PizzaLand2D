@@ -132,7 +132,7 @@ public class OrderRulergameObject : MonoBehaviour
 
 
 
-    bool CheckOrder(int OrderID)
+    public bool CheckOrder(int OrderID)
     {
         Order currentOrder = orders[OrderID];
         for (int i = 0; i < currentOrder.orderElement.Length; i++)

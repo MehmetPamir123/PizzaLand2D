@@ -92,6 +92,10 @@ MonoBehaviour:
   orderID: 0
   order: {fileID: 11400000, guid: daac3f6dec6756a49bcb087106bd6710, type: 2}
   TimeLeft: 0
+  orderElement: {fileID: 0}
+  okey: {fileID: 21300000, guid: 781b0d8643b709046b513b84ccffcfa7, type: 3}
+  notOkey: {fileID: 21300000, guid: 18556db2be97aeb49a1e6685d80c1e09, type: 3}
+  sr: {fileID: 3629129223770033736}
 --- !u!114 &167633101752904806
 MonoBehaviour:
   m_ObjectHideFlags: 0

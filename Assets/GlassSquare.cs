@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System;
 
 public class GlassSquare : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class GlassSquare : MonoBehaviour
     public Image sliceImg;
 
     public UnityEvent pizzaTakeEvent;
+
+    public static event Action SomethingChangedInGlasses;
     public int HowManyCanIAdd()
     {
         return maxAmount - amount;
@@ -31,6 +34,7 @@ public class GlassSquare : MonoBehaviour
         sliceImg.enabled = true;
         amount += addAmount;
         ChangeText();
+        SomethingChangedInGlasses?.Invoke();
     }
     public int TryEatThatMuch(int iWantThisMuch)
     {
@@ -41,9 +45,11 @@ public class GlassSquare : MonoBehaviour
         }
         else
         {
+            int returnedZahl = iWantThisMuch - amount;
             Eat(amount);
-            return iWantThisMuch - amount;
+            return returnedZahl;
         }
+
     }
     public void Eat(int iWantThisMuch)
     {
@@ -60,6 +66,7 @@ public class GlassSquare : MonoBehaviour
             sliceImg.enabled = false;
         }
         ChangeText();
+        SomethingChangedInGlasses?.Invoke();
     }
     public void Trash()
     {

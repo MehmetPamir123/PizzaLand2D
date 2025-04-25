@@ -49,4 +49,17 @@ public class PizzaIngredients
         Chicken = chicken;
         Pineapple = pineapple;
     }
+    public static PizzaIngredients operator +(PizzaIngredients a, PizzaIngredients b)
+    {
+        return new PizzaIngredients(
+            a.Dough + b.Dough,
+            a.Souce + b.Souce,
+            a.Cheese + b.Cheese,
+            a.Sausage + b.Sausage,
+            a.Pepper + b.Pepper,
+            a.Mushroom + b.Mushroom,
+            a.Chicken + b.Chicken,
+            a.Pineapple + b.Pineapple
+        );
+    }
 }
