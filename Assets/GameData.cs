@@ -45,6 +45,8 @@ public class GameData : MonoBehaviour
 
     private static GameData instance; // Singleton mantýðý ile eriþim
 
+    public GameObject GoturUstPanel;
+
     private void Awake()
     {
         instance = this; // Singleton referansýný al
@@ -54,6 +56,7 @@ public class GameData : MonoBehaviour
         //Debug.Log("Money Changed! New value: " + _money);
         if (instance != null && instance.moneyText != null)
         {
+            Money = MathF.Round(Money, 2, MidpointRounding.AwayFromZero);
             instance.moneyText.text = _money.ToString();
         }
     }
@@ -64,6 +67,7 @@ public class GameData : MonoBehaviour
         isOvenActive = new bool[ovens.Length];
         selectedGlassNumber = -1;
         selectedGlass.position = new Vector2(10000, 10000);
+        PaymentPanel.isOrderAvailable = true;
     }
     public bool CheckInventoryHasSpace(PizzaTypes pizzaType)
     {
@@ -297,6 +301,21 @@ public class GameData : MonoBehaviour
     public void AddIngredients(PizzaIngredients ings)
     {
         myIngredients += ings;
+    }
+
+
+    PizzaIngredients orderHolder;
+    public void StartOrder(float time, PizzaIngredients ings)
+    {
+        orderHolder = ings;
+        GoturUstPanel.GetComponent<GoturPanel>().timeLeft = time;
+        GoturUstPanel.SetActive(true);
+    }
+    public void OrderArrived()
+    {
+        myIngredients += orderHolder;
+        orderHolder = null;
+        PaymentPanel.isOrderAvailable = true;
     }
 }
 

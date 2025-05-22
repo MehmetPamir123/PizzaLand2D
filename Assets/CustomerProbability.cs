@@ -15,6 +15,7 @@ public class CustomerProbability : ScriptableObject
 public class helperCustomProbabilityhelper
 {
     public int maxCustomerBarrier;
+    public Vector2 MinMaxTime;
     public Vector2 MinMaxAmount;
     public helperPizzaProbability[] pizzaProbabilities;
 }

@@ -24,6 +24,7 @@ public class PizzaListMaker : MonoBehaviour
     }
     public void TryActivateThisPizza(PizzaTypes pizzaType)
     {
+        if (isThisPizzaActivated(pizzaType)) { return; }
         if(GameData.Money >= pizzaType.unlockFee)
         {
             foreach (var item in pizzaController)
@@ -31,6 +32,7 @@ public class PizzaListMaker : MonoBehaviour
                 if (item.type == pizzaType)
                 {
                     item.isActive = true;
+                    GameData.Money -= pizzaType.unlockFee;
                     UpdatePizzaActivations();
                     Debug.Log($"{item.type.name} has unlocked!");
                 }

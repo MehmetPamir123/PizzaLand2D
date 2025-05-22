@@ -14,18 +14,106 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   probabilities:
   - maxCustomerBarrier: 7
+    MinMaxTime: {x: 10, y: 15}
+    MinMaxAmount: {x: 1, y: 3}
+    pizzaProbabilities:
+    - pizzaTypes: {fileID: 11400000, guid: c4c96c10aec48874e876c82b0c5c4beb, type: 2}
+      dropChance: 75
+    - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
+      dropChance: 50
+  - maxCustomerBarrier: 15
+    MinMaxTime: {x: 10, y: 15}
     MinMaxAmount: {x: 1, y: 3}
     pizzaProbabilities:
     - pizzaTypes: {fileID: 11400000, guid: c4c96c10aec48874e876c82b0c5c4beb, type: 2}
       dropChance: 50
     - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
       dropChance: 50
-  - maxCustomerBarrier: 15
-    MinMaxAmount: {x: 2, y: 4}
+  - maxCustomerBarrier: 20
+    MinMaxTime: {x: 15, y: 25}
+    MinMaxAmount: {x: 1, y: 3}
     pizzaProbabilities:
-    - pizzaTypes: {fileID: 11400000, guid: dff955a121ede4944950be63a9d9fa97, type: 2}
-      dropChance: 33
+    - pizzaTypes: {fileID: 11400000, guid: c4c96c10aec48874e876c82b0c5c4beb, type: 2}
+      dropChance: 40
     - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
-      dropChance: 33
-    - pizzaTypes: {fileID: 11400000, guid: 9b899ec5b66fa7a49ad7af1228ab0704, type: 2}
-      dropChance: 33
+      dropChance: 40
+    - pizzaTypes: {fileID: 11400000, guid: 8840e53cbf79e9641b643813da8ae63a, type: 2}
+      dropChance: 20
+  - maxCustomerBarrier: 30
+    MinMaxTime: {x: 15, y: 25}
+    MinMaxAmount: {x: 1, y: 4}
+    pizzaProbabilities:
+    - pizzaTypes: {fileID: 11400000, guid: c4c96c10aec48874e876c82b0c5c4beb, type: 2}
+      dropChance: 10
+    - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
+      dropChance: 50
+    - pizzaTypes: {fileID: 11400000, guid: 8840e53cbf79e9641b643813da8ae63a, type: 2}
+      dropChance: 40
+  - maxCustomerBarrier: 40
+    MinMaxTime: {x: 15, y: 25}
+    MinMaxAmount: {x: 1, y: 4}
+    pizzaProbabilities:
+    - pizzaTypes: {fileID: 11400000, guid: c4c96c10aec48874e876c82b0c5c4beb, type: 2}
+      dropChance: 5
+    - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
+      dropChance: 30
+    - pizzaTypes: {fileID: 11400000, guid: 8840e53cbf79e9641b643813da8ae63a, type: 2}
+      dropChance: 65
+  - maxCustomerBarrier: 45
+    MinMaxTime: {x: 25, y: 30}
+    MinMaxAmount: {x: 1, y: 5}
+    pizzaProbabilities:
+    - pizzaTypes: {fileID: 11400000, guid: c4c96c10aec48874e876c82b0c5c4beb, type: 2}
+      dropChance: 5
+    - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
+      dropChance: 30
+    - pizzaTypes: {fileID: 11400000, guid: 8840e53cbf79e9641b643813da8ae63a, type: 2}
+      dropChance: 55
+    - pizzaTypes: {fileID: 11400000, guid: 1cb0bc88c153caa44974dc13b260a9b4, type: 2}
+      dropChance: 10
+  - maxCustomerBarrier: 50
+    MinMaxTime: {x: 30, y: 40}
+    MinMaxAmount: {x: 1, y: 4}
+    pizzaProbabilities:
+    - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
+      dropChance: 10
+    - pizzaTypes: {fileID: 11400000, guid: 8840e53cbf79e9641b643813da8ae63a, type: 2}
+      dropChance: 60
+    - pizzaTypes: {fileID: 11400000, guid: 1cb0bc88c153caa44974dc13b260a9b4, type: 2}
+      dropChance: 30
+  - maxCustomerBarrier: 65
+    MinMaxTime: {x: 30, y: 40}
+    MinMaxAmount: {x: 1, y: 4}
+    pizzaProbabilities:
+    - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
+      dropChance: 10
+    - pizzaTypes: {fileID: 11400000, guid: 8840e53cbf79e9641b643813da8ae63a, type: 2}
+      dropChance: 55
+    - pizzaTypes: {fileID: 11400000, guid: 1cb0bc88c153caa44974dc13b260a9b4, type: 2}
+      dropChance: 25
+    - pizzaTypes: {fileID: 11400000, guid: dff955a121ede4944950be63a9d9fa97, type: 2}
+      dropChance: 10
+  - maxCustomerBarrier: 75
+    MinMaxTime: {x: 30, y: 40}
+    MinMaxAmount: {x: 1, y: 4}
+    pizzaProbabilities:
+    - pizzaTypes: {fileID: 11400000, guid: 8840e53cbf79e9641b643813da8ae63a, type: 2}
+      dropChance: 40
+    - pizzaTypes: {fileID: 11400000, guid: 1cb0bc88c153caa44974dc13b260a9b4, type: 2}
+      dropChance: 40
+    - pizzaTypes: {fileID: 11400000, guid: dff955a121ede4944950be63a9d9fa97, type: 2}
+      dropChance: 20
+  - maxCustomerBarrier: 85
+    MinMaxTime: {x: 35, y: 45}
+    MinMaxAmount: {x: 1, y: 4}
+    pizzaProbabilities:
+    - pizzaTypes: {fileID: 11400000, guid: 2b6264111212c2f4787afafffea8824b, type: 2}
+      dropChance: 5
+    - pizzaTypes: {fileID: 11400000, guid: 8840e53cbf79e9641b643813da8ae63a, type: 2}
+      dropChance: 30
+    - pizzaTypes: {fileID: 11400000, guid: 1cb0bc88c153caa44974dc13b260a9b4, type: 2}
+      dropChance: 30
+    - pizzaTypes: {fileID: 11400000, guid: dff955a121ede4944950be63a9d9fa97, type: 2}
+      dropChance: 30
+    - pizzaTypes: {fileID: 11400000, guid: c4c96c10aec48874e876c82b0c5c4beb, type: 2}
+      dropChance: 5

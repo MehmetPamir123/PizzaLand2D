@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class PaymentPanel : MonoBehaviour
 {
+    public static bool isOrderAvailable;
+
     public GameData gameData;
     public GameObject paymentPanel;
     public Transform deliverySelectTransform;
     public Transform[] buttonTransforms;
     public GameObject button_Coupon;
+    public GameObject errorMessage;
     public float currentBalance = 0;
     float currentDeliveryCost = 0;
+    float deliveryTime;
 
     float shoppingAmount = 0;
     float couponAmount = 0;
@@ -47,13 +52,16 @@ public class PaymentPanel : MonoBehaviour
         {
             case 0:
                 currentDeliveryCost = 10;
+                deliveryTime = UnityEngine.Random.Range(10,15);
 
                 break;
             case 1:
                 currentDeliveryCost = 4.25f;
+                deliveryTime = UnityEngine.Random.Range(60, 90);
                 break;
             case 2:
                 currentDeliveryCost = 0;
+                deliveryTime = UnityEngine.Random.Range(120, 180);
                 break;
             default:
                 Debug.LogError(a);
@@ -70,7 +78,7 @@ public class PaymentPanel : MonoBehaviour
         text_shopping.text = shoppingAmount.ToString();
         text_coupon.text = ((shoppingAmount + currentDeliveryCost) * (-couponAmount / 100)).ToString();
         text_total.text = gesamtCost.ToString();
-        newBalance = currentBalance - gesamtCost;
+        newBalance = MathF.Round(currentBalance - gesamtCost,2, MidpointRounding.AwayFromZero);
         text_newBalance.text = newBalance.ToString();
 
         if (newBalance < 0 || gesamtCost > 50)
@@ -98,9 +106,16 @@ public class PaymentPanel : MonoBehaviour
     }
     public void Order()
     {
-        if(newBalance < 0){ return; }
+        if (!isOrderAvailable)
+        {
+            Instantiate(errorMessage,transform);
+
+            return;
+        }
+        if (newBalance < 0){ return; }
         GameData.Money = newBalance;
-        gameData.AddIngredients(gesamtIngredients);
+        isOrderAvailable = false;
+        gameData.StartOrder(deliveryTime, gesamtIngredients);
         paymentPanel.SetActive(false);
     }
 }

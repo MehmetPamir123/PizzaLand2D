@@ -29,7 +29,50 @@ public class OrderRulergameObject : MonoBehaviour
     public Vector2[] paperPositions;
 
     public static event Action<int> OnOrderComplete;
-    public void CreateOrderPaper()
+
+    bool isLoopPaused = false;
+
+    public void ParaVer()
+    {
+        GameData.Money += 10;
+    }
+
+    private void Start()
+    {
+        OrderLoop();
+    }
+    public void OrderLoop()
+    {
+        helperCustomProbabilityhelper currentProbability = null;
+        for (int i = 0; i < probability.probabilities.Length; i++)
+        {
+            if (amountOfCreatedPapers < probability.probabilities[i].maxCustomerBarrier)
+            {
+                currentProbability = probability.probabilities[i];
+                break;
+            }
+        }
+
+        float time = UnityEngine.Random.Range(currentProbability.MinMaxTime.x, currentProbability.MinMaxTime.y);
+        StartCoroutine(Loop(time, currentProbability));
+    }
+    public IEnumerator Loop(float time, helperCustomProbabilityhelper currentProbability)
+    {
+        while (!isLoopPaused)
+        {
+            time -= Time.deltaTime;
+            if (time <= 0)
+            {
+                CreateOrderPaper(currentProbability);
+                OrderLoop();
+                break;
+            }
+            yield return null;
+        }
+
+
+    }
+    public void CreateOrderPaper(helperCustomProbabilityhelper currentProbability)
     {
         int newID = 0;
         while (true)
@@ -48,7 +91,7 @@ public class OrderRulergameObject : MonoBehaviour
             break;
         }
         Debug.Log(newID);
-        orders.Add(newID, CreateOrder());
+        orders.Add(newID, CreateOrder(currentProbability));
         OrderPaper oP = Instantiate(OrderPaper,OrderPaperHolder).GetComponent<OrderPaper>();
 
         
@@ -57,22 +100,14 @@ public class OrderRulergameObject : MonoBehaviour
         currentPaperAmount++;
         amountOfCreatedPapers++;
     }
-    Order CreateOrder()
+    Order CreateOrder(helperCustomProbabilityhelper currentProbability)
     {
         // ScriptableObject için instance oluþturulmasý (new yerine CreateInstance kullanýlmalý)
         Order order = ScriptableObject.CreateInstance<Order>();
         // Dinamik olarak sipariþ öðelerini ekleyebilmek için geçici liste kullanýyoruz
         List<TypeAndAmount> orderList = new List<TypeAndAmount>();
 
-        helperCustomProbabilityhelper currentProbability = null;
-        for (int i = 0; i < probability.probabilities.Length; i++)
-        {
-            if (amountOfCreatedPapers < probability.probabilities[i].maxCustomerBarrier)
-            {
-                currentProbability = probability.probabilities[i];
-                break;
-            }
-        }
+        
         // Eðer uygun probability bulunamazsa, dizinin sonuncusunu seçebiliriz
         if (currentProbability == null)
         {
